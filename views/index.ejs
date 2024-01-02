@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR-code generator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="center-items">
+    <div class="container center-items">
+        <form action="/" method="post" class="center-items">
+            <label for="url">
+                Enter your text/url here:
+            </label>
+            <input type="text" name="url" id="url" autofocus required>
+            <ul class="center-items">
+                <li class="type center-items">
+                    <input type="radio" name="fileFormat" value="svg" id="svg" checked>
+                    <label for="svg">Svg</label>
+                </li>
+                <li class="type center-items">
+                    <input type="radio" name="fileFormat" value="png" id="png">
+                    <label for="png">Png</label>
+                </li>
+            </ul>
+            <button type="submit">Create QR code</button>
+        </form>
+        <div class="img-box center-items">
+            <% if (locals.imgName) { %>
+                <%- '<img src="images/' + imgName + '" alt="qr-code"' %>
+            <% } else { %>
+                <img src="images/qr-code.svg" alt="">
+            <% }  %>
+        </div>
+    </div>
+</body>
+</html>
