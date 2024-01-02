@@ -63,7 +63,7 @@ function createCode(text, format) {
 function currentTime() {
     let date = new Date()
     let yr = date.getFullYear()
-    let mon = date.getMonth()
+    let mon = date.getMonth()+1
     let dt = date.getDate()
     let hr = date.getHours()
     let min = date.getMinutes()
